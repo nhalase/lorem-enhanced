@@ -5,7 +5,8 @@ plugins {
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
+apply plugin: 'maven'
+apply plugin: 'signing'
 apply plugin: 'findbugs'
 
 version = '1.0.0-SNAPSHOT'
@@ -49,29 +50,64 @@ tasks.withType(FindBugs) {
 	}
 }
 
-task javadocJar(type: Jar, dependsOn: javadoc) {
+task javadocJar(type: Jar) {
 	classifier = 'javadoc'
-	from 'build/docs/javadoc'
+	from javadoc
 }
 
 task sourcesJar(type: Jar) {
-	from sourceSets.main.allSource
 	classifier = 'sources'
+	from sourceSets.main.allSource
 }
 
-publishing {
-	publications {
-		mavenJava(MavenPublication) {
-			from components.java
-		}
-	}
+artifacts {
+	archives javadocJar, sourcesJar
 }
 
-publishing {
+signing {
+	sign configurations.archives
+}
+
+uploadArchives {
 	repositories {
-		maven {
-			// change to point to your repo, e.g. http://my.org/repo
-			url "$buildDir/repo"
+		mavenDeployer {
+			beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+			repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+				authentication(userName: ossrhUsername, password: ossrhPassword)
+			}
+
+			snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+				authentication(userName: ossrhUsername, password: ossrhPassword)
+			}
+
+			pom.project {
+				name 'lorem-enhanced'
+				packaging 'jar'
+				description 'an enhanced lorem ipsum generator'
+				url 'https://github.com/nhalase/lorem-enhanced'
+
+				scm {
+					connection 'scm:git:git://github.com/nhalase/lorem-enhanced.git'
+					developerConnection 'scm:git:git@github.com:nhalase/lorem-enhanced.git'
+					url 'https://github.com/nhalase/lorem-enhanced'
+				}
+
+				licenses {
+					license {
+						name 'MIT License'
+						url 'http://www.opensource.org/licenses/mit-license.php'
+					}
+				}
+
+				developers {
+					developer {
+						id 'njhalase'
+						name 'Nicholas J Halase'
+						email 'nick@halase.me'
+					}
+				}
+			}
 		}
 	}
 }
