@@ -1,0 +1,77 @@
+plugins {
+	id "net.saliman.cobertura" version "2.3.2"
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'maven-publish'
+apply plugin: 'findbugs'
+
+version = '1.0.0-SNAPSHOT'
+group = 'org.nhalase.lorem'
+archivesBaseName = 'lorem-enhanced'
+jar.baseName = 'lorem-enhanced'
+description = "an enhanced lorem ipsum generator"
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+task wrapper(type: Wrapper) {
+	gradleVersion = "3.1"
+}
+
+repositories {
+	mavenCentral()
+}
+
+project.ext {
+	slf4jVersion   = '1.7.21'
+	junitVersion   = '4.12'
+}
+
+dependencies {
+	compile "org.slf4j:log4j-over-slf4j:${slf4jVersion}"
+	testCompile "junit:junit:${junitVersion}"
+}
+
+cobertura {
+	coverageFormats = ['xml', 'html']
+	coverageIgnoreTrivial = true // ignore getters/setters
+}
+
+tasks.withType(FindBugs) {
+	reports {
+		// only one reporting type can be enabled at a time
+		// jenkins expects xml
+		xml.enabled true
+		html.enabled false
+	}
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+	classifier = 'javadoc'
+	from 'build/docs/javadoc'
+}
+
+task sourcesJar(type: Jar) {
+	from sourceSets.main.allSource
+	classifier = 'sources'
+}
+
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			from components.java
+		}
+	}
+}
+
+publishing {
+	repositories {
+		maven {
+			// change to point to your repo, e.g. http://my.org/repo
+			url "$buildDir/repo"
+		}
+	}
+}

@@ -1,0 +1,20 @@
+build/
+out/
+target/
+build.number
+.gradle/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+*.ipr
+*.ids
+
+# Mac
+.DS_Store
