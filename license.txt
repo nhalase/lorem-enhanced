@@ -21,4 +21,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 Copyright for portions of project lorem-enhanced are held by mdeanda, 2015 as part of project lorem.
-All other copyright for project lorem-enhanced are held by Nicholas Halase, 2016.
+All other copyright for project lorem-enhanced are held by Nicholas J Halase, 2016.

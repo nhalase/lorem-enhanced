@@ -1,13 +1,13 @@
 lorem-enhanced
 =====
 
-An extremely useful Lorem Ipsum generator for Java! A fork of project [lorem](https://github.com/mdeanda/lorem).
+An extremely useful Lorem Ipsum generator for Java! A fork of project [lorem](https://github.com/mdeanda/lorem) (Many Thanks!).
 
 ### Getting Started:
 
 Add this to gradle:
 ```gradle
-compile 'org.nhalase:lorem-enhanced:1.0.0'
+compile 'com.github.nhalase:lorem-enhanced:1.0.0-SNAPSHOT'
 ```
 
 Now prepare your implementation:

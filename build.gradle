@@ -9,7 +9,7 @@ apply plugin: 'maven-publish'
 apply plugin: 'findbugs'
 
 version = '1.0.0-SNAPSHOT'
-group = 'org.nhalase.lorem'
+group = 'com.github.nhalase'
 archivesBaseName = 'lorem-enhanced'
 jar.baseName = 'lorem-enhanced'
 description = "an enhanced lorem ipsum generator"

@@ -1,4 +1,4 @@
-package org.nhalase.lorem;
+package com.github.nhalase.lorem;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -34,7 +34,7 @@ import java.util.Random;
  * @author nhalase
  *
  * Copyright for portions of project lorem-enhanced are held by mdeanda, 2015 as part of project lorem.
- * All other copyright for project lorem-enhanced are held by Nicholas Halase, 2016.
+ * All other copyright for project lorem-enhanced are held by Nicholas J Halase, 2016.
  *
  */
 public class LoremIpsum implements Lorem {
@@ -141,7 +141,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.nhalase.Lorem#getCity()
+	 * @see com.github.nhalase.Lorem#getCity()
 	 */
 	@Override
 	public String getCity() {
@@ -151,7 +151,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.nhalase.Lorem#getCountry()
+	 * @see com.github.nhalase.Lorem#getCountry()
 	 */
 	@Override
 	public String getCountry() {
@@ -161,7 +161,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.nhalase.Lorem#getEmail()
+	 * @see com.github.nhalase.Lorem#getEmail()
 	 */
 	@Override
 	public String getEmail() {
@@ -185,7 +185,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.nhalase.Lorem#getFirstName()
+	 * @see com.github.nhalase.Lorem#getFirstName()
 	 */
 	@Override
 	public String getFirstName() {
@@ -195,7 +195,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.nhalase.Lorem#getFirstNameMale()
+	 * @see com.github.nhalase.Lorem#getFirstNameMale()
 	 */
 	@Override
 	public String getFirstNameMale() {
@@ -205,7 +205,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.nhalase.Lorem#getFirstNameFemale()
+	 * @see com.github.nhalase.Lorem#getFirstNameFemale()
 	 */
 	@Override
 	public String getFirstNameFemale() {
@@ -215,7 +215,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.nhalase.Lorem#getLastName()
+	 * @see com.github.nhalase.Lorem#getLastName()
 	 */
 	@Override
 	public String getLastName() {
@@ -225,7 +225,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.nhalase.Lorem#getName()
+	 * @see com.github.nhalase.Lorem#getName()
 	 */
 	@Override
 	public String getName() {
@@ -235,7 +235,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.nhalase.Lorem#getNameMale()
+	 * @see com.github.nhalase.Lorem#getNameMale()
 	 */
 	@Override
 	public String getNameMale() {
@@ -245,7 +245,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.nhalase.Lorem#getNameFemale()
+	 * @see com.github.nhalase.Lorem#getNameFemale()
 	 */
 	@Override
 	public String getNameFemale() {
@@ -255,7 +255,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.nhalase.Lorem#getTitle(int)
+	 * @see com.github.nhalase.Lorem#getTitle(int)
 	 */
 	@Override
 	public String getTitle(int count) {
@@ -265,7 +265,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.nhalase.Lorem#getTitle(int, int)
+	 * @see com.github.nhalase.Lorem#getTitle(int, int)
 	 */
 	@Override
 	public String getTitle(int min, int max) {
@@ -285,7 +285,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.nhalase.Lorem#getHtmlParagraphs(int, int)
+	 * @see com.github.nhalase.Lorem#getHtmlParagraphs(int, int)
 	 */
 	@Override
 	public String getHtmlParagraphs(int min, int max) {
@@ -302,7 +302,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.nhalase.Lorem#getParagraphs(int, int)
+	 * @see com.github.nhalase.Lorem#getParagraphs(int, int)
 	 */
 	@Override
 	public String getParagraphs(int min, int max) {
@@ -327,7 +327,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.nhalase.Lorem#getUrl()
+	 * @see com.github.nhalase.Lorem#getUrl()
 	 */
 	@Override
 	public String getUrl() {
@@ -345,7 +345,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.nhalase.Lorem#getUrl()
+	 * @see com.github.nhalase.Lorem#getUrl()
 	 */
 	@Override
 	public String getUniversityName() {
@@ -355,7 +355,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.nhalase.Lorem#getSchoolName()
+	 * @see com.github.nhalase.Lorem#getSchoolName()
 	 */
 	@Override
 	public String getSchoolName() {
@@ -365,7 +365,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.nhalase.Lorem#getCollegeName()
+	 * @see com.github.nhalase.Lorem#getCollegeName()
 	 */
 	@Override
 	public String getCollegeName() {
@@ -375,7 +375,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.nhalase.Lorem#getDepartmentName()
+	 * @see com.github.nhalase.Lorem#getDepartmentName()
 	 */
 	@Override
 	public String getDepartmentName() {
@@ -385,7 +385,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.nhalase.Lorem#getAdjective()
+	 * @see com.github.nhalase.Lorem#getAdjective()
 	 */
 	@Override
 	public String getAdjective() {
@@ -396,7 +396,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.nhalase.Lorem#getNoun()
+	 * @see com.github.nhalase.Lorem#getNoun()
 	 */
 	@Override
 	public String getNoun() {
@@ -444,7 +444,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.nhalase.Lorem#getWords(int)
+	 * @see com.github.nhalase.Lorem#getWords(int)
 	 */
 	@Override
 	public String getWords(int count) {
@@ -454,7 +454,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.nhalase.Lorem#getWords(int, int)
+	 * @see com.github.nhalase.Lorem#getWords(int, int)
 	 */
 	@Override
 	public String getWords(int min, int max) {
@@ -488,7 +488,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.nhalase.Lorem#getPhone()
+	 * @see com.github.nhalase.Lorem#getPhone()
 	 */
 	@Override
 	public String getPhone() {
@@ -516,7 +516,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.nhalase.Lorem#getStateAbbr()
+	 * @see com.github.nhalase.Lorem#getStateAbbr()
 	 */
 	@Override
 	public String getStateAbbr() {
@@ -526,7 +526,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.nhalase.Lorem#getStateFull()
+	 * @see com.github.nhalase.Lorem#getStateFull()
 	 */
 	@Override
 	public String getStateFull() {
@@ -536,7 +536,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.nhalase.Lorem#getZipCode()
+	 * @see com.github.nhalase.Lorem#getZipCode()
 	 */
 	@Override
 	public String getZipCode() {
@@ -550,7 +550,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.nhalase.Lorem#getPossibleAdjectives()
+	 * @see com.github.nhalase.Lorem#getPossibleAdjectives()
 	 */
 	@Override
 	public List<String> getPossibleAdjectives() {
@@ -560,7 +560,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.nhalase.Lorem#getPossibleNouns()
+	 * @see com.github.nhalase.Lorem#getPossibleNouns()
 	 */
 	@Override
 	public List<String> getPossibleNouns() {
@@ -570,7 +570,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.nhalase.Lorem#getPossibleMaleFirstNames()
+	 * @see com.github.nhalase.Lorem#getPossibleMaleFirstNames()
 	 */
 	@Override
 	public List<String> getPossibleMaleFirstNames() {
@@ -580,7 +580,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.nhalase.Lorem#getPossibleFemaleFirstNames()
+	 * @see com.github.nhalase.Lorem#getPossibleFemaleFirstNames()
 	 */
 	@Override
 	public List<String> getPossibleFemaleFirstNames() {
@@ -590,7 +590,7 @@ public class LoremIpsum implements Lorem {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.nhalase.Lorem#getPossibleLastNames()
+	 * @see com.github.nhalase.Lorem#getPossibleLastNames()
 	 */
 	@Override
 	public List<String> getPossibleLastNames() {

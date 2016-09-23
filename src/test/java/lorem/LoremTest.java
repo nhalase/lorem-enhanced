@@ -9,8 +9,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import org.nhalase.lorem.Lorem;
-import org.nhalase.lorem.LoremIpsum;
+import com.github.nhalase.lorem.Lorem;
+import com.github.nhalase.lorem.LoremIpsum;
 
 /**
  * The MIT License (MIT)
@@ -39,7 +39,7 @@ import org.nhalase.lorem.LoremIpsum;
  * @author nhalase
  *
  * Copyright for portions of project lorem-enhanced are held by mdeanda, 2015 as part of project lorem.
- * All other copyright for project lorem-enhanced are held by Nicholas Halase, 2016.
+ * All other copyright for project lorem-enhanced are held by Nicholas J Halase, 2016.
  *
  */
 public class LoremTest {

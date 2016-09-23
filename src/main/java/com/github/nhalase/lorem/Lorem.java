@@ -1,4 +1,4 @@
-package org.nhalase.lorem;
+package com.github.nhalase.lorem;
 
 import java.util.List;
 
@@ -29,7 +29,7 @@ import java.util.List;
  * @author nhalase
  *
  * Copyright for portions of project lorem-enhanced are held by mdeanda, 2015 as part of project lorem.
- * All other copyright for project lorem-enhanced are held by Nicholas Halase, 2016.
+ * All other copyright for project lorem-enhanced are held by Nicholas J Halase, 2016.
  *
  */
 public interface Lorem {
