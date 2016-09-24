@@ -7,7 +7,7 @@ An extremely useful Lorem Ipsum generator for Java! A fork of project [lorem](ht
 
 Add this to gradle:
 ```gradle
-compile 'com.github.nhalase:lorem-enhanced:1.0.0-SNAPSHOT'
+compile 'com.github.nhalase:lorem-enhanced:1.0.0'
 ```
 
 Now prepare your implementation:
