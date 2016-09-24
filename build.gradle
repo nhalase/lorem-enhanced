@@ -9,7 +9,7 @@ apply plugin: 'maven'
 apply plugin: 'signing'
 apply plugin: 'findbugs'
 
-version = '1.0.0-SNAPSHOT'
+version = '1.0.0'
 group = 'com.github.nhalase'
 archivesBaseName = 'lorem-enhanced'
 jar.baseName = 'lorem-enhanced'
@@ -17,6 +17,23 @@ description = "an enhanced lorem ipsum generator"
 
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
+
+def isDevBuild
+def isCiBuild
+def isReleaseBuild
+
+def sonatypeRepositoryUrl
+
+if (hasProperty("release")) {
+	isReleaseBuild = true
+	sonatypeRepositoryUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+} else if (hasProperty("ci")) {
+	isCiBuild = true
+	version += "-SNAPSHOT"
+	sonatypeRepositoryUrl = "https://oss.sonatype.org/content/repositories/snapshots/"
+} else {
+	isDevBuild = true
+}
 
 task wrapper(type: Wrapper) {
 	gradleVersion = "3.1"
@@ -64,47 +81,57 @@ artifacts {
 	archives javadocJar, sourcesJar
 }
 
-signing {
-	sign configurations.archives
+if (isReleaseBuild) {
+	signing {
+		sign configurations.archives
+	}
+} else {
+	task signArchives {
+		// do nothing
+	}
 }
 
 uploadArchives {
 	repositories {
-		mavenDeployer {
-			beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+		if (isDevBuild) {
+			mavenLocal()
+		}
+		else {
+			mavenDeployer {
 
-			repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-				authentication(userName: ossrhUsername, password: ossrhPassword)
-			}
+				if (isReleaseBuild) {
+					beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+				}
 
-			snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-				authentication(userName: ossrhUsername, password: ossrhPassword)
-			}
+				repository(url: sonatypeRepositoryUrl) {
+					authentication(userName: ossrhUsername, password: ossrhPassword)
+				}
 
-			pom.project {
-				name 'lorem-enhanced'
-				packaging 'jar'
-				description 'an enhanced lorem ipsum generator'
-				url 'https://github.com/nhalase/lorem-enhanced'
-
-				scm {
-					connection 'scm:git:git://github.com/nhalase/lorem-enhanced.git'
-					developerConnection 'scm:git:git@github.com:nhalase/lorem-enhanced.git'
+				pom.project {
+					name 'lorem-enhanced'
+					packaging 'jar'
+					description 'an enhanced lorem ipsum generator'
 					url 'https://github.com/nhalase/lorem-enhanced'
-				}
 
-				licenses {
-					license {
-						name 'MIT License'
-						url 'http://www.opensource.org/licenses/mit-license.php'
+					scm {
+						connection 'scm:git:git://github.com/nhalase/lorem-enhanced.git'
+						developerConnection 'scm:git:git@github.com:nhalase/lorem-enhanced.git'
+						url 'https://github.com/nhalase/lorem-enhanced'
 					}
-				}
 
-				developers {
-					developer {
-						id 'njhalase'
-						name 'Nicholas J Halase'
-						email 'nick@halase.me'
+					licenses {
+						license {
+							name 'MIT License'
+							url 'http://www.opensource.org/licenses/mit-license.php'
+						}
+					}
+
+					developers {
+						developer {
+							id 'njhalase'
+							name 'Nicholas J Halase'
+							email 'nick@halase.me'
+						}
 					}
 				}
 			}
